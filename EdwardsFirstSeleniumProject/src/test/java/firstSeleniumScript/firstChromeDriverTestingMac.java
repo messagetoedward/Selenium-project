@@ -21,7 +21,7 @@ public class firstChromeDriverTestingMac {
 		Thread.sleep(3000);
 		System.out.println(driver.getTitle());
 		
-		//changes for Github
+		//new changes for Github 
 	
 	
 		
