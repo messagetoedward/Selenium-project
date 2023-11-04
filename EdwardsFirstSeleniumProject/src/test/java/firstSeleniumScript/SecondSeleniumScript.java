@@ -12,10 +12,12 @@ public class SecondSeleniumScript {
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://facebook.com");
-		driver.findElement(By.id("email")).sendKeys("test@testmail.com");
-		driver.findElement(By.id("pass")).sendKeys("testpassword");
+//		driver.findElement(By.xpath("//input[@placeholder='Email address or phone number']")).sendKeys("test@testmail.com");
+//		driver.findElement(By.cssSelector("input[placeholder='Email address or phone number']")).sendKeys("test@testmail.com");
+//		driver.findElement(By.id("email")).sendKeys("test@testmail.com");
+//		driver.findElement(By.id("pass")).sendKeys("testpassword");
 
-
+		driver.findElement(By.cssSelector("button[id*='u_0']")).sendKeys("it works");
 		
 		
 	}
