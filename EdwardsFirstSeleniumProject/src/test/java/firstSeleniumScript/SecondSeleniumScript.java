@@ -19,9 +19,12 @@ public class SecondSeleniumScript {
 		
 		//Regular expression CSS
 //		driver.findElement(By.cssSelector("button[id*='u_0']")).click();
-		driver.findElement(By.cssSelector("input[class^='inputtext']")).sendKeys("test@testmail.com");
+//		driver.findElement(By.cssSelector("input[class^='inputtext']")).sendKeys("test@testmail.com");
+//		driver.findElement(By.cssSelector("input[placeholder$='word']")).sendKeys("testpassword");
 		
-		
+		//Regular expressions xpath
+		driver.findElement(By.xpath("//input[contains(@placeholder, 'number')]")).sendKeys("test@testmfaka.com");
+		driver.findElement(By.xpath("//input[starts-with(@placeholder, 'Pass')]")).sendKeys("testpassword");
 		
 	}
 
