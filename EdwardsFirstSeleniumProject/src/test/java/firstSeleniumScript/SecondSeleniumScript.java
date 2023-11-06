@@ -12,6 +12,11 @@ public class SecondSeleniumScript {
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://facebook.com");
+		//Absolute xpath
+		driver.findElement(By.xpath("//div[@class='_6luv _52jv']/form/div/div/input")).sendKeys("test@testmail.com");
+		driver.findElement(By.xpath("//div[@class='_6luv _52jv']/form/div/div/div/input")).sendKeys("testpassword");
+
+		
 //		driver.findElement(By.xpath("//input[@placeholder='Email address or phone number']")).sendKeys("test@testmail.com");
 //		driver.findElement(By.cssSelector("input[placeholder='Email address or phone number']")).sendKeys("test@testmail.com");
 //		driver.findElement(By.id("email")).sendKeys("test@testmail.com");
@@ -23,8 +28,10 @@ public class SecondSeleniumScript {
 //		driver.findElement(By.cssSelector("input[placeholder$='word']")).sendKeys("testpassword");
 		
 		//Regular expressions xpath
-		driver.findElement(By.xpath("//input[contains(@placeholder, 'number')]")).sendKeys("test@testmfaka.com");
-		driver.findElement(By.xpath("//input[starts-with(@placeholder, 'Pass')]")).sendKeys("testpassword");
+//		driver.findElement(By.xpath("//input[contains(@placeholder, 'number')]")).sendKeys("test@testmfaka.com");
+//		driver.findElement(By.xpath("//input[starts-with(@placeholder, 'Pass')]")).sendKeys("testpassword");
+		
+
 		
 	}
 
