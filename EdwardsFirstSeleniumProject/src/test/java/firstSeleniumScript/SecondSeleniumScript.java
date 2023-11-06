@@ -29,7 +29,7 @@ public class SecondSeleniumScript {
 		System.out.println(errorMessage.getText());
 		driver.navigate().back();
 		
-		//1.2 Test user can not loging with just password
+		//1.2 Test user can not logging with just password
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='_6luv _52jv']/form/div/div/input")).clear();
 		driver.findElement(By.xpath("//div[@class='_6luv _52jv']/form/div/div/div/input")).sendKeys("testpassword");
