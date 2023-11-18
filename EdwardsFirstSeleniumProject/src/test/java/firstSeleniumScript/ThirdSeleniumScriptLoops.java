@@ -16,15 +16,33 @@ public class ThirdSeleniumScriptLoops {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://amazon.com/");
+		//page refresh
 		driver.navigate().refresh();
+		//implicit wait
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		//select dropdown
 		Select dropdown = new Select(driver.findElement(By.cssSelector("select[id='searchDropdownBox']")));
+		//select by index
 		dropdown.selectByIndex(12);
 		System.out.println(dropdown.getFirstSelectedOption().getText());
+		//select by value
 		dropdown.selectByValue("search-alias=mobile");
 		System.out.println(dropdown.getFirstSelectedOption().getText());
-		dropdown.selectByVisibleText("Collectibles & Fine Art");
+		//select by visible text
+		dropdown.selectByVisibleText("Handmade");
 		System.out.println(dropdown.getFirstSelectedOption().getText());
+		driver.findElement(By.cssSelector("input[id='twotabsearchtextbox']")).sendKeys("wood", Keys.ENTER);
+		//new select
+		Select sort = new Select(driver.findElement(By.xpath("//select[@id='s-result-sort-select']")));
+		sort.selectByVisibleText("Price: High to Low");
+		System.out.println(sort.getFirstSelectedOption().getText());
+		//additionaly click on 4 star + rating
+		driver.findElement(By.xpath("//span[@class='a-list-item']/a")).click();
+		
+		//couting links on page
+		System.out.println(driver.findElement(By.tagName("a")).
+		
+		
 		
 		
 //		driver.findElement(By.cssSelector("[id='searchDropdownBox']")).click();
