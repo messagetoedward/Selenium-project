@@ -39,8 +39,9 @@ public class ThirdSeleniumScriptLoops {
 		//additionaly click on 4 star + rating
 		driver.findElement(By.xpath("//span[@class='a-list-item']/a")).click();
 		
-		//couting links on page
-		System.out.println(driver.findElement(By.tagName("a")).
+		//counting links on page
+		System.out.println(driver.findElements(By.tagName("a")).size());
+	
 		
 		
 		
