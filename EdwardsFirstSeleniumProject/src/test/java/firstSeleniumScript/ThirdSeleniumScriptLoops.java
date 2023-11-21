@@ -36,9 +36,8 @@ public class ThirdSeleniumScriptLoops {
 		Select sort = new Select(driver.findElement(By.xpath("//select[@id='s-result-sort-select']")));
 		sort.selectByVisibleText("Price: High to Low");
 		System.out.println(sort.getFirstSelectedOption().getText());
-		//additionaly click on 4 star + rating
+		//additionally click on 4 star + rating
 		driver.findElement(By.xpath("//span[@class='a-list-item']/a")).click();
-		
 		//counting links on page
 		System.out.println(driver.findElements(By.tagName("a")).size());
 	
