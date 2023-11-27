@@ -16,8 +16,25 @@ public class forLoops {
 
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://aa.com");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.get("https://booking.com");
+		Thread.sleep(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		driver.findElement(By.xpath("//div[@data-testid='searchbox-footer']/div[1]")).click();
+//		driver.findElement(By.xpath("//button[@aria-label='Dismiss sign in information.']")).click();
+		
+		WebElement travelForWork = driver.findElement(By.id(":rg:"));
+//		travelForWork.click();
+		
+		System.out.println(travelForWork.isSelected());
+		
+		
+		driver.findElement(By.xpath("//div[@data-testid='searchbox-footer']/div[1]")).click();
+	
+		System.out.println(travelForWork.isSelected());
+		System.out.println("end 0f script");
+
+		
 		//Loops and Multiple WebElements
 //			Select departmentDropdown = new Select(driver.findElement(By.cssSelector("select[id='searchDropdownBox']")));
 //			departmentDropdown.selectByValue("search-alias=baby-products");
@@ -35,14 +52,21 @@ public class forLoops {
 			//driver.navigate().refresh();
 		//Locate span using xpath no tag (*any tag), attribute+value 
 		
-		WebElement redeemMiles = driver.findElement(By.xpath("//*[@for='flightSearchForm.tripType.redeemMiles']"));
-		System.out.println(driver.findElement(By.xpath("//*[@for='flightSearchForm.tripType.redeemMiles']/span")).getText());
+//		WebElement redeemMiles = driver.findElement(By.xpath("//*[@for='flightSearchForm.tripType.redeemMiles']"));
+//		System.out.println(driver.findElement(By.xpath("//*[@for='flightSearchForm.tripType.redeemMiles']/span")).getText());
 		
-		redeemMiles.click();
-		Thread.sleep(1000);
+//		redeemMiles.click();
 //		System.out.println(redeemMiles.getText());
-		System.out.println(driver.findElement(By.xpath("//*[@for='flightSearchForm.tripType.redeemMiles']/span")).getText());
-
+//		System.out.println(driver.findElement(By.xpath("//*[@for='flightSearchForm.tripType.redeemMiles']/span")).getText());
+		
+		//isSelected for # of passengers
+		
+//		Select numberOfPassengers = new Select(driver.findElement(By.id("flightSearchForm.adultOrSeniorPassengerCount")));
+		
+//		System.out.println(numberOfPassengers.getFirstSelectedOption().getText());
+		
+		
+		
 	}
 		
 }
