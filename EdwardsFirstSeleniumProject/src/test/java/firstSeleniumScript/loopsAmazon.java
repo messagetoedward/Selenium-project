@@ -21,11 +21,11 @@ public class loopsAmazon {
 		Thread.sleep(Duration.ofSeconds(6));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		Select dropDown = new Select(driver.findElement(By.id("searchDropdownBox")));
+		List<WebElement> countDropDown = driver.findElements(By.xpath("//*[@id='searchDropdownBox']/option"));
 		
+		System.out.println(countDropDown.size());
 		
-		System.out.println(driver.findElements(By.xpath("//*[@id='searchDropdownBox']/option")).size());
-		
-		for (int i=1; i<driver.findElements(By.xpath("//*[@id='searchDropdownBox']/option")).size(); i++) {
+		for (int i=1; i<countDropDown.size(); i++) {
 			dropDown.selectByIndex(i);
 			System.out.println(dropDown.getFirstSelectedOption().getText());
 		}	
