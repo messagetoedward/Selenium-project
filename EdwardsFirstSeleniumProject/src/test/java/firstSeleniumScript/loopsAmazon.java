@@ -18,18 +18,24 @@ public class loopsAmazon {
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://amazon.com");
-		Thread.sleep(Duration.ofSeconds(6));
+		Thread.sleep(Duration.ofSeconds(3));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		Select dropDown = new Select(driver.findElement(By.id("searchDropdownBox")));
 		List<WebElement> countDropDown = driver.findElements(By.xpath("//*[@id='searchDropdownBox']/option"));
 		
 		System.out.println(countDropDown.size());
 		
-		for (int i=1; i<countDropDown.size(); i++) {
+		dropDown.selectByIndex(55);
+		
+		for (int i=0; i<countDropDown.size(); i++) {
 			dropDown.selectByIndex(i);
 			System.out.println(dropDown.getFirstSelectedOption().getText());
 		}	
 		
+		for (int i=countDropDown.size(); i>0; i--) {
+			dropDown.selectByIndex(i-1);
+			System.out.println(dropDown.getFirstSelectedOption().getText());
+		}
 		
 	}
 
