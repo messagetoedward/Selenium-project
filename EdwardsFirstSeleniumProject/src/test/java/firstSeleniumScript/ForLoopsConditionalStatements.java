@@ -28,18 +28,46 @@ public class ForLoopsConditionalStatements {
 		WebElement exreactAdultPassenger = driver.findElement(By.xpath("//*[@id=\":rf:\"]/div/div[1]/div[2]/button[1]"));
 		WebElement doneButton = driver.findElement(By.xpath("//*[@id=\":rf:\"]/button"));
 		
-		int i=2;
-		while (i<5) {
+		addAdultPassenger.click();
+		
+		int i =3;
+		while (i<10) {
 			addAdultPassenger.click();
 			i++;
 		}
+		
+		int k = 10;
+		while (k>1) {
+			exreactAdultPassenger.click();
+			i--;
+		}
+		
+//		for (int i=2; i<10; i++) {
+//			addAdultPassenger.click();
+//		}
+//		
+//		for (int i=10; i>2; i--) {
+//			exreactAdultPassenger.click();
+//		}
+		
+//		int i=2;
+//		while (i<5) {
+//			addAdultPassenger.click();
+//			i++;
+//		}
+//		
+//		int k=5;
+//		while (k>3) {
+//			exreactAdultPassenger.click();
+//			k--;
+//		}
 		
 		//for (int i=2; i<5; i++) {
 		//	addAdultPassenger.click();
 		//	System.out.println(driver.findElement(By.xpath("//*[@id=\":rf:\"]/div/div[1]/div[2]/span")).getText());
 		//}
 		
-		doneButton.click();
+//		doneButton.click();
 		
 	}
 
