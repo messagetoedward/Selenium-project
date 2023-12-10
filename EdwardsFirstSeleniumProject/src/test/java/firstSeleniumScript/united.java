@@ -18,18 +18,38 @@ public class united {
 //		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.get("https://aa.com");
+		
+		WebElement redeemMilesInput = driver.findElement(By.id("flightSearchForm.tripType.redeemMiles"));
+		WebElement redeemMilesLabel = driver.findElement(By.xpath("//label[@for='flightSearchForm.tripType.redeemMiles']"));
+
+		if (redeemMilesInput.isSelected()==false) {
+			System.out.println("redeem miles is not clicked and status is " + redeemMilesInput.isSelected());
+		} else {
+			redeemMilesLabel.click();
+			System.out.println("redeem miles being clicked and status is " + redeemMilesInput.isSelected());
+		}
+//		
+//		System.out.println(redeemMilesInput.isSelected());
+//		
+//		redeemMilesLabel.click();
+//		System.out.println(redeemMilesInput.isSelected());
+//		
+		
+		
+		
+		
 //		driver.findElement(By.id("APjFqb")).sendKeys("american airlines", Keys.ENTER);
 //		driver.findElement(By.xpath("//a[@href='https://www.united.com/']")).click();
 //		driver.navigate().refresh();
 //		driver.navigate().back();
-		System.out.println("Tabs "+ driver.findElements(By.cssSelector("a[class='ui-tabs-anchor']")).size());
-		System.out.println("Checkbox "+ driver.findElements(By.cssSelector("[type='checkbox']")).size());
-		System.out.println("Links "+ driver.findElements(By.tagName("a")).size());
-		
-		Select dropDown = new Select(driver.findElement(By.cssSelector("select[name='adultOrSeniorPassengerCount']")));
-		dropDown.selectByIndex(2);
-		System.out.println(dropDown.getFirstSelectedOption().getText());
-		
+//		System.out.println("Tabs "+ driver.findElements(By.cssSelector("a[class='ui-tabs-anchor']")).size());
+//		System.out.println("Checkbox "+ driver.findElements(By.cssSelector("[type='checkbox']")).size());
+//		System.out.println("Links "+ driver.findElements(By.tagName("a")).size());
+//		
+//		Select dropDown = new Select(driver.findElement(By.cssSelector("select[name='adultOrSeniorPassengerCount']")));
+//		dropDown.selectByIndex(2);
+//		System.out.println(dropDown.getFirstSelectedOption().getText());
+//		
 		
 		
 	
