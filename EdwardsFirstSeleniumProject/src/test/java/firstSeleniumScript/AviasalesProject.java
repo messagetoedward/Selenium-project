@@ -28,25 +28,54 @@ public class AviasalesProject {
         List<WebElement> dropdownFromItems = driver.findElements(By.xpath("//*[@id='avia_form_origin-menu']/li"));
         List<WebElement> dropdownDynamicActiveWait = wait.until(ExpectedConditions.visibilityOfAllElements(dropdownFromItems));
         
+        // Locating the departure date button and click it 
+        WebElement clickDepartureDate =   driver.findElement(By.cssSelector("button[data-test-id='start-date-field']"));
+        WebElement clickReturnDate = driver.findElement(By.cssSelector("button[data-test-id='end-date-field']"));
+        clickDepartureDate.click();
+        List<WebElement> departureDates = driver.findElements(By.cssSelector("div[role='gridcell']"));
+        
         dropDownMenuIteration(driver, dropdownDynamicActiveWait);
+        selectingDates(departureDates, clickReturnDate);
     }
 
     private static void dropDownMenuIteration(WebDriver driver, List<WebElement> dropdownDynamicActiveWait) {
-        for (WebElement eachItem : dropdownDynamicActiveWait) {
-            String eachItemName = eachItem.getText();
-            System.out.println(eachItemName);
-            
-            if (eachItemName.contains("Charlotte")) {
-            	eachItem.click();
-            	System.out.println("Hooray Charlotte clicked =)");
-            	break; 
-            } else {
-            	System.out.println("Charlotte wasnt clicked abort, panic =O");
-            	break;
-            }
-        }
+//        for (WebElement eachItem : dropdownDynamicActiveWait) {
+//            String eachItemName = eachItem.getText();
+//            System.out.println(eachItemName);
+//            
+//            if (eachItemName.contains("Charlotte")) {
+//            	eachItem.click();
+//            	System.out.println("Hooray Charlotte clicked =)");
+//            	break; 
+//            } else {
+//            	System.out.println("Charlotte wasnt clicked abort, panic =O");
+//            	break;
+//            }
+//        }   
+    	}
+    private static void selectingDates (List<WebElement> departureDates, WebElement clickReturnDate) {	
+    	System.out.println(departureDates.size());
+    	for (WebElement date : departureDates) {
+    		String eachDate = date.getAttribute("aria-label");
+//    		System.out.println(eachDate);
+    		
+    		if (eachDate.contains("Thu Dec 21 2023")) {
+    			date.click();
+    			date.click();
+    			System.out.println("Date Thu Dec 21 2023 was clicked");
+    		} else if (eachDate.contains("Sun Jan 21 2024")) { 
+    			date.click();
+    			date.click();
+    			System.out.println("Date Sun Jan 21 2024 was clicked");
+    			break;
+    		} else {
+    			System.out.println("Dates werent found panic!");
+    		}
+    	}
     }
-}
+    
+    }
+
 
 
 
