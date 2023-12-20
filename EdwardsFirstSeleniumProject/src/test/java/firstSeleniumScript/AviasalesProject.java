@@ -39,7 +39,7 @@ public class AviasalesProject {
             if (eachItemName.contains("Charlotte")) {
             	eachItem.click();
             	System.out.println("Hooray Charlotte clicked =)");
-            	break;
+            	break; 
             } else {
             	System.out.println("Charlotte wasnt clicked abort, panic =O");
             	break;
