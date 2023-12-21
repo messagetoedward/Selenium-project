@@ -39,25 +39,26 @@ public class AviasalesProject {
     }
 
     private static void dropDownMenuIteration(WebDriver driver, List<WebElement> dropdownDynamicActiveWait) {
-//        for (WebElement eachItem : dropdownDynamicActiveWait) {
-//            String eachItemName = eachItem.getText();
-//            System.out.println(eachItemName);
-//            
-//            if (eachItemName.contains("Charlotte")) {
-//            	eachItem.click();
-//            	System.out.println("Hooray Charlotte clicked =)");
-//            	break; 
-//            } else {
-//            	System.out.println("Charlotte wasnt clicked abort, panic =O");
-//            	break;
-//            }
-//        }   
+       /* for (WebElement eachItem : dropdownDynamicActiveWait) {
+            String eachItemName = eachItem.getText();
+            System.out.println(eachItemName);
+            
+            if (eachItemName.contains("Charlotte")) {
+            	eachItem.click();
+            	System.out.println("Hooray Charlotte clicked =)");
+            	break; 
+            } else {
+            	System.out.println("Charlotte wasnt clicked abort, panic =O");
+            	break;
+            }
+        }   */
     	}
     private static void selectingDates (List<WebElement> departureDates, WebElement clickReturnDate) {	
     	System.out.println(departureDates.size());
-    	for (WebElement date : departureDates) {
+    	
+    	/* for (WebElement date : departureDates) {
     		String eachDate = date.getAttribute("aria-label");
-//    		System.out.println(eachDate);
+    		System.out.println(eachDate);
     		
     		if (eachDate.contains("Thu Dec 21 2023")) {
     			date.click();
@@ -71,7 +72,7 @@ public class AviasalesProject {
     		} else {
     			System.out.println("Dates werent found panic!");
     		}
-    	}
+    	} */
     }
     
     }
