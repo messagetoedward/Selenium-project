@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AviaSalesSimplified {
@@ -63,6 +64,28 @@ public class AviaSalesSimplified {
 			}
 			
 		}
+		
+		WebElement startDateFieldButton = driver.findElement(By.cssSelector("button[data-test-id='start-date-field']"));
+		startDateFieldButton.click();
+		
+		Select startDateMonth = new Select(driver.findElement(By.xpath("/html/body/div[7]/div[2]/div/div/div/div/form/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div/select")));
+//		List <WebElement> startDateMonthList = driver.findElements(By.xpath("/html/body/div[7]/div[2]/div/div/div/div/form/div[1]/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[1]/div/select/option"));	
+		startDateMonth.selectByIndex(4);
+		
+		WebElement startDate = driver.findElement(By.cssSelector("div[data-test-id='date-13.01.2024']"));
+		startDate.click();
+		
+		WebElement endDate = driver.findElement(By.cssSelector("div[data-test-id='date-20.01.2024']"));
+		endDate.click();
+		
+		
+		
+		
+//		System.out.println(startDateMonth.getFirstSelectedOption().getText());		
+		
+		
+		
+//		List <WebElement> selectStartDate = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy())
 		
 	}
 
