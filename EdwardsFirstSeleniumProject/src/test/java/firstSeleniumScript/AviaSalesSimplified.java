@@ -108,8 +108,9 @@ public class AviaSalesSimplified {
 			FileUtils.copyFile(screenCapture2, new File("/Users/mgid/Documents/GitHub/screensnap1.png"));
 		
 		System.out.println(driver.getTitle());	
-			
-		//Assert.assertEquals(driver.getTitle(), false, null);
+		
+		//Hard assertion
+		Assert.assertEquals(driver.getTitle(), "Cheap Airline Tickets & Airfares - Find Deals on Flights at Aviasales.com", "Did not match the title");
 		
 		/* WebElement startDate = driver.findElement(By.cssSelector("div[data-test-id='date-13.01.2024']"));
 		startDate.click();
