@@ -11,6 +11,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class ForLoopsConditionalStatements {
 
@@ -20,7 +22,7 @@ public class ForLoopsConditionalStatements {
 		Thread.sleep(4000);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		
-//		driver.findElement(By.xpath("//*[@id=\"b2indexPage\"]/div[22]/div/div/div/div[1]/div[1]/div/button")).click();
+		driver.findElement(By.xpath("//*[@id=\"b2indexPage\"]/div[22]/div/div/div/div[1]/div[1]/div/button")).click();
 		
 		WebElement passenger = driver.findElement(By.xpath("//*[@id='indexsearch']/div[2]/div/form/div[1]/div[3]/div/button"));
 //		passenger.click();
@@ -40,8 +42,7 @@ public class ForLoopsConditionalStatements {
 		for (WebElement each : autoComplete) {
 			String eachName=each.getText();
 			System.out.println(eachName);
-			if(eachName.contains("Charlotte") /*("Charlotte\n"
-					+ "North Carolina, United States")*/) {
+			if(eachName.contains("Charlotte")) {
 				each.click();
 				System.out.println("clicked");
 				break;
@@ -49,6 +50,39 @@ public class ForLoopsConditionalStatements {
 				System.out.println("was not clicked - panic >=O");
 			}
 		} 
+		
+		WebElement flightsOnly = driver.findElement(By.id(":rg:"));
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertEquals(flightsOnly.isSelected(), true, "It should fail and keep going");
+		System.out.println(flightsOnly.isSelected());
+		// Assert.assertFalse(flightsOnly.isSelected());
+		
+		
+		WebElement occupancyButton = driver.findElement(By.cssSelector("button[data-testid=\"occupancy-config\"]"));
+		occupancyButton.click();
+		WebElement numberOfAdults = driver.findElement(By.xpath("//*[@id=\":rf:\"]/div/div[1]/div[2]/span"));
+		WebElement addAdults = driver.findElement(By.xpath("//*[@id=\":rf:\"]/div/div[1]/div[2]/button[2]"));
+		
+		for (int i = 2; i<5; i++) {
+			addAdults.click();
+		}
+		softAssert.assertEquals(numberOfAdults.getText(), "4", "Adult number did not match");
+
+		
+		softAssert.assertAll(); 
+		
+		
+
+		
+		
+		//flightsOnly.click();
+		// System.out.println(flightsOnly.isSelected());
+		
+		
+		
+		// Assert.assertEquals(flightsOnly.isSelected(), false, "looks like checked");
+
+		
 		
 		/* count and name each <a> tag START
 		 
