@@ -22,7 +22,7 @@ public class AviasalesProject {
         // Type "ch" into the input field
         destinationFrom.clear();
         destinationFrom.sendKeys("san");
-
+        System.out.println(driver.getTitle());
         // Wait for the dropdown items to appear
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> dropdownFromItems = driver.findElements(By.xpath("//*[@id='avia_form_origin-menu']/li"));
@@ -76,20 +76,6 @@ public class AviasalesProject {
     }
     
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //package firstSeleniumScript;
